@@ -13,8 +13,7 @@ app.use('/api/imagesearch/:searchterm', function(req, res){
 		console.log('response: ' + response);
 		var mBody = JSON.parse(body); 
 		var newObj = [];
-		if (mBody.items instanceof(Object)) {;
-			console.log(mBody.items);
+		if (mBody.items instanceof(Object)) {
 			for(var i = 0; i < Object.keys(mBody.items).length; i++){
 				newObj.push(new Object);
 				newObj[i].url = mBody.items[i].link;
@@ -43,9 +42,7 @@ app.use('/api/latest/imagesearch/', function(req, res){
 		if(err) throw err;
 
 		// send respond
-		res.send(searches);
-		//log to console
-		console.log(searches);
+		res.send(JSON.stringify(searches));
 	});
 });
 app.get('/', function(req, res){
