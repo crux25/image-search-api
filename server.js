@@ -38,7 +38,7 @@ app.use('/api/imagesearch/:searchterm', function(req, res){
 });
 
 app.use('/api/latest/imagesearch/', function(req, res){
-	Search.find({}, {'_id' : 0, '__v' : 0 }).limit(10).exec(function(err, searches){
+	Search.find({}, {'_id' : 0, '__v' : 0 }).sort({'when' : -1}).limit(10).exec(function(err, searches){
 		if(err) throw err;
 
 		// send respond
