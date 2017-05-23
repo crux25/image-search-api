@@ -48,6 +48,9 @@ app.use('/api/latest/imagesearch/', function(req, res){
 		console.log(searches);
 	});
 });
+app.get('/', function(req, res){
+	res.send("");
+});
 app.listen(port, function(){
 	console.log('app started on port: ' + port);
 });
